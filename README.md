@@ -1,18 +1,12 @@
-## Getting Started
+## Proyecto Conversor.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Bievenidos a mi proyecto, conversor, en el doy la facilidad de convertir la moneda Dolar a diferentes tipos de monedas que hay alrededor del mundo.
 
-## Folder Structure
+## Estructura del proyecto
 
-The workspace contains two folders by default, where:
+Contiene 1 carpeta, donde:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- `src`: Contiene el codigo fuente:
+    - `Conversion` : Contiene la clase Conversor.
+    - `Moneda`: Contiene las clases Monedas la cuales se encargan de convertir el dinero a uno distinto. 
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
