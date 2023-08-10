@@ -14,8 +14,14 @@ public class Won extends Conversor {
      * 3 cifras significativas.
      */
     @Override
-    public String convertirDinero(String dinero){
+    public String convertir_Mi_Moneda(String dinero){
         double wones = Math.round(Double.parseDouble(dinero) * WON * 100.0)/100.0;
         return String.valueOf(wones);
+    }
+
+    @Override
+    public String convertir_A_Mi_Moneda(String dinero) {
+        double dolar = Math.round(Double.parseDouble(dinero) / WON * 100.0)/100.0;
+        return String.valueOf(dolar);
     }
 }
