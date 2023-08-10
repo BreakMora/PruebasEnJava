@@ -4,10 +4,36 @@ import Moneda.*;
 
 public class Main {
     static Conversor convertir;
+    static String dinero = null;
 
     public static void main(String[] args) {
-        String dinero = null;
+        boolean menu = true;
+        String[] opcmenu = {
+                "- Selección -",
+                "Convertir Dolares a Moneda Extranjera.",
+                "Convertir Moneda Extranjera a Dolares."};
+        while(menu){
+                String opcion = (JOptionPane.showInputDialog(
+                        null,
+                        "Seleccione la opcion de conversión: ",
+                        "Menu Conversor de Monedas",
+                        JOptionPane.QUESTION_MESSAGE,
+                        null,
+                        opcmenu,
+                        "- Selección -")).toString();
+                
+                switch(opcion){
+                        case "Convertir Dolares a Moneda Extranjera.":
+                                Convertir_Dolares_a_MonedaExtranjera();
+                                break;
+                        case "Convertir Moneda Extranjera a Dolares.":
+                                Convertir_MonedaExtranjera_a_Dolares();
+                                break;
+                }
+        }
+    }
 
+    private static void Convertir_Dolares_a_MonedaExtranjera(){
         String[] conversiones = {
                 "- Selección -",
                 "Convertir de Dólar a Euros.",
@@ -15,32 +41,16 @@ public class Main {
                 "Convertir de Dólar a Yen Japonés.",
                 "Convertir de Dólar a Won Sur-Coreano."};
         
-        String[] conversiones2 = {
-                "- Selección -",
-                "Convertir de Euros a Dólar.",
-                "Convertir de Libras Esterlinas a Dólar.",
-                "Convertir de Yen Japonés a Dólar.",
-                "Convertir de Won Sur-Coreano a  Dólar."};
-        
-        String opcion1 = (JOptionPane.showInputDialog(
+        String opcion = (JOptionPane.showInputDialog(
                 null,
                 "Seleccione la opcion de conversión: ",
-                "Menu Conversor de Monedas",
+                "Menu Conversor de Dolar a Moneda Extranjera",
                 JOptionPane.QUESTION_MESSAGE,
                 null,
                 conversiones,
                 "- Selección -")).toString();
 
-        String opcion2 = (JOptionPane.showInputDialog(
-                null, 
-                "Seleccione la opcion de conversión: ", 
-                "Menu Conversor de Monedas", 
-                JOptionPane.QUESTION_MESSAGE,
-                null,
-                conversiones2,
-                "- Selección -")).toString();
-        
-        switch (opcion1) {
+        switch (opcion) {
             case "Convertir de Dólar a Euros.":
                 convertir = new Euro();
                 dinero = (JOptionPane.showInputDialog(
@@ -99,9 +109,27 @@ public class Main {
                         "Dolares Convertidos a Won Sur-Coreano",
                         JOptionPane.INFORMATION_MESSAGE);
                 break;
-        }
-        
-        switch (opcion2) {
+        }      
+    }
+
+    private static void Convertir_MonedaExtranjera_a_Dolares(){
+        String[] conversiones = {
+                "- Selección -",
+                "Convertir de Euros a Dólar.",
+                "Convertir de Libras Esterlinas a Dólar.",
+                "Convertir de Yen Japonés a Dólar.",
+                "Convertir de Won Sur-Coreano a  Dólar."};
+
+        String opcion = (JOptionPane.showInputDialog(
+                null, 
+                "Seleccione la opcion de conversión: ", 
+                "Menu Conversor de Moneda Extranjera a Dolares", 
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                conversiones,
+                "- Selección -")).toString();
+
+        switch (opcion) {
                 case "Convertir de Euros a Dólar.":
                 convertir = new Euro();
                 dinero = (JOptionPane.showInputDialog(
